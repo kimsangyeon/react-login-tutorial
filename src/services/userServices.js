@@ -52,7 +52,7 @@ function register(user) {
   const opts = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    bod: JSON.stringify(user),
+    body: JSON.stringify(user),
   };
 
   return fetch('/users/register', opts).then(handleResponse);
