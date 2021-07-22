@@ -13,9 +13,9 @@ export const userConstants = {
   
   LOGOUT: 'USERS_LOGOUT',
 
-  GETALL_REQUEST: 'USERS_GETALL_REQUEST',
-  GETALL_SUCCESS: 'USERS_GETALL_SUCCESS',
-  GETALL_FAILURE: 'USERS_GETALL_FAILURE',
+  GET_USERS_REQUEST: 'USERS_GET_USERS_REQUEST',
+  GET_USERS_SUCCESS: 'USERS_GET_USERS_SUCCESS',
+  GET_USERS_FAILURE: 'USERS_GET_USERS_FAILURE',
 
   DELETE_REQUEST: 'USERS_DELETE_REQUEST',
   DELETE_SUCCESS: 'USERS_DELETE_SUCCESS',
@@ -26,7 +26,7 @@ export const userActions = {
   login,
   logout,
   register,
-  getAll,
+  getUsers,
   remove,
 };
 
@@ -76,11 +76,11 @@ function register(user) {
   function failure(error) { return {type: userConstants.REGISTER_FAILURE, error} }
 }
 
-function getAll() {
+function getUsers() {
   return dispatch => {
     dispatch(request());
 
-    userServices.getAll()
+    userServices.getUsers()
       .then(users => {
         dispatch(success(users));
       })
@@ -89,9 +89,9 @@ function getAll() {
       });
   };
 
-  function request() { return {type: userConstants.GETALL_REQUEST} }
-  function success(users) { return {type: userConstants.GETALL_SUCCESS, users} }
-  function failure(error) { return {type: userConstants.GETALL_FAILURE, error} }
+  function request() { return {type: userConstants.GET_USERS_REQUEST} }
+  function success(users) { return {type: userConstants.GET_USERS_SUCCESS, users} }
+  function failure(error) { return {type: userConstants.GET_USERS_FAILURE, error} }
 }
 
 function remove(id) {

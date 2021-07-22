@@ -4,7 +4,7 @@ export const userServices = {
   login,
   logout,
   register,
-  getAll,
+  getUsers,
   getById,
   update,
   remove,
@@ -57,7 +57,7 @@ function register(user) {
   return fetch('/users/register', opts).then(handleResponse);
 }
 
-function getAll() {
+function getUsers() {
   const opts = {
     method: 'GET',
     headers: authHeader(),

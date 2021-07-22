@@ -41,15 +41,15 @@ export function registration(state = {}, action) {
 
 export function users(state = {}, action) {
   switch(action.type) {
-    case userConstants.GETALL_REQUEST:
+    case userConstants.GET_USERS_REQUEST:
       return {
         loading: true,
       };
-    case userConstants.GETALL_SUCCESS:
+    case userConstants.GET_USERS_SUCCESS:
       return {
         items: action.users,
       };
-    case userConstants.GETALL_FAILURE:
+    case userConstants.GET_USERS_FAILURE:
       return {
         error: action.error,
       };

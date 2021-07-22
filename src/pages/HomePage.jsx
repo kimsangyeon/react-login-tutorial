@@ -9,7 +9,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(userActions.getAll());
+    dispatch(userActions.getUsers());
   }, []);
 
   const handleDeleteUser = (id) => {
